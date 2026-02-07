@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Her<3</title>
+  <link rel="stylesheet" href="new.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>For My Jaanam🧸💜</h1>
+
+    <!-- Decorative background postcard -->
+    <div class="postcard1"></div>
+
+    <!-- Letter postcard -->
+    <div class="postcard">
+      <div class="letter"></div>
+      <p>
+        <span>My Love,</span><br>
+        It’s Rose Day today, and I didn’t want the day to go by without doing something for you.
+        This isn’t anything big or fancy, but I really wanted to make this for you.
+        
+        I know you love cute little things, and I know how much you love black and white roses, so this just felt right.
+        Honestly, every time I think of you, I feel this calm happiness that’s hard to explain. You make things feel lighter for me, just by being there.
+        
+        I don’t say it enough, but I really love the way you are the little things, the quiet moments, everything.
+        I hope this makes you smile, even if it’s just for a moment.
+        
+        Happy Rose Day, lovey
+        <br><br>
+        <span class="Tahir">Your's loving<br>Tahir</span>
+      </p>
+    </div>
+
+    <!-- Rose choice section -->
+    <div class="choice-section">
+      <p class="choose-text">Choose one 🌹</p>
+      <div class="roses">
+        <img src="images/white rose.jpg" alt="White Rose" class="rose" data-rose="White">
+        <img src="images/black rose.jpg" alt="Black Rose" class="rose" data-rose="Black">
+      </div>      
+    </div>
+  </div>
+
+  <!-- Popup Modal -->
+  <div id="rosePopup" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <p id="popupMessage"></p>
+    </div>
+  </div>
+
+  <!-- ------------------------
+       JavaScript
+  ------------------------ -->
+  <script>
+    const roses = document.querySelectorAll(".rose");
+    const popup = document.getElementById("rosePopup");
+    const popupContent = document.querySelector(".popup-content");
+    const popupMessage = document.getElementById("popupMessage");
+    const closeBtn = document.querySelector(".popup .close");
+
+    // Hover: fade the other rose slightly
+    roses.forEach((rose) => {
+  rose.addEventListener("click", () => {
+    let message = "";
+
+    popupContent.classList.remove("white-theme", "black-theme");
+
+if (rose.dataset.rose === "White") {
+  popupContent.classList.add("white-theme");
+  message = `🤍 White Rose<br><br>
+  Pure, calm, and gentle just like the love I feel when I think of you.`;
+}
+
+if (rose.dataset.rose === "Black") {
+  popupContent.classList.add("black-theme");
+  message = `🖤 Black Rose<br><br>
+  Deep, rare, and intense a love that stays, no matter what.`;
+}
+
+    popupMessage.innerHTML = message;
+    popup.style.display = "flex";
+    popup.classList.add("show"); // for animation
+  });
+});
+   // Close popup
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+  popup.classList.remove("show");
+});
+
+// Close popup when clicking outside content
+popup.addEventListener("click", (e) => {
+  if(e.target === popup){
+    popup.style.display = "none";
+    popup.classList.remove("show");
+  }
+});
+  </script>
+  <!-- Popup Modal -->
+<div id="rosePopup" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <p id="popupMessage"></p>
+    </div>
+  </div>  
+</body>
+</html>

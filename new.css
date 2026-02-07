@@ -1,0 +1,241 @@
+/* ------------------------
+   GLOBAL STYLES
+------------------------ */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff5f8;
+  }
+  
+  .wrap {
+    max-width: 420px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+  }
+  
+  /* ------------------------
+     POSTCARDS
+  ------------------------ */
+  .postcard1 {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-6deg);
+    width: 95%;
+    max-width: 420px;
+    height: 340px;
+    background: linear-gradient(135deg, #f8bbd0, #f48fb1);
+    border-radius: 22px;
+    box-shadow: 0 25px 40px rgba(0,0,0,0.2);
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  
+  .postcard {
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    margin-bottom: 30px;
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .letter {
+    height: 10px;
+  }
+  
+  .postcard p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.4rem;
+  }
+  
+  .ullu {
+    font-weight: bold;
+    color: #880e4f;
+  }
+  
+  .address img.mail_stamp {
+    width: 60px;
+    margin-top: 15px;
+  }
+  
+  /* ------------------------
+     ROSES
+  ------------------------ */
+  .choice-section {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .choose-text {
+    font-size: 1.1rem;
+    color: #880e4f;
+    margin-bottom: 15px;
+  }
+  
+  .roses {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .rose {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+  }
+  
+  /* Fade the other rose when hovering one */
+.roses:hover .rose {
+    opacity: 0.6;
+    filter: grayscale(50%);
+  }
+  
+  .rose:hover {
+    opacity: 1 !important;
+    filter: none !important;
+  }  
+  
+  /* ------------------------
+     POPUP MODAL
+  ------------------------ */
+  .popup {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    position: relative;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  
+  .popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s ease;
+  }
+  
+  .popup-content .close:hover {
+    color: #000;
+  }
+  
+  /* ------------------------
+     FOOTER
+  ------------------------ */
+  footer {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+  }
+  /* ------------------------
+   POPUP MODAL
+------------------------ */
+.popup {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    position: relative;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  /* 👉 ADD THIS RIGHT HERE 👇 */
+  
+  /* White rose popup */
+  .popup-content.white-theme {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  /* Black rose popup */
+  .popup-content.black-theme {
+    background: #000000;
+    color: #ffffff;
+  }
+  
+  .popup-content.white-theme .close {
+    color: #000;
+  }
+  
+  .popup-content.black-theme .close {
+    color: #fff;
+  }
+  
+  /* ------------------------
+     ANIMATIONS
+  ------------------------ */
+  
+  
+  /* ------------------------
+     ANIMATIONS
+  ------------------------ */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  /* ------------------------
+   POPUP FADE-IN ANIMATION
+------------------------ */
+.popup.show .popup-content {
+    animation: fadeIn 0.4s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  
+ 
